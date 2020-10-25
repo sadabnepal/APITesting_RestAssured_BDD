@@ -1,31 +1,36 @@
 package utilities;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Payload {
 	
-	public static String addPlacePayload() {
-		return  "{\r\n" + 
-				"  \"location\": {\r\n" + 
-				"    \"lat\": -38.383494,\r\n" + 
-				"    \"lng\": 33.427362\r\n" + 
-				"  },\r\n" + 
-				"  \"accuracy\": 50,\r\n" + 
-				"  \"name\": \"Frontline house\",\r\n" + 
-				"  \"phone_number\": \"(+91) 983 893 3937\",\r\n" + 
-				"  \"address\": \"29, side layout, cohen 09\",\r\n" + 
-				"  \"types\": [\r\n" + 
-				"    \"shoe park\",\r\n" + 
-				"    \"shop\"\r\n" + 
-				"  ],\r\n" + 
-				"  \"website\": \"http://google.com\",\r\n" + 
-				"  \"language\": \"French-IN\"\r\n" + 
-				"}\r\n" + 
-				"";
+	public static HashMap<String, Object> addPlacePayload() {
+		HashMap<String, Object> addplace = new HashMap<String, Object>();
+		
+		HashMap<String, Object> locmap = new HashMap<String, Object>();
+		locmap.put("lat", "-38.383494");
+		locmap.put("lng", "33.427362");
+		
+		addplace.put("location", locmap);
+		addplace.put("accuracy", "50");
+		addplace.put("name", "API house");
+		addplace.put("phone_number", "(+91) 983 893 3937");
+		addplace.put("address", "29, side layout, cohen 09");
+		
+		ArrayList<String> typelist=new ArrayList<String>();
+		typelist.add("shoe park");
+		typelist.add("shop");
+		
+		addplace.put("types", typelist);
+		addplace.put("website", "http://google.com");
+		addplace.put("language", "French-IN");
+		return addplace;
 	}
 
-	public static String deletePayload(String placeId) {
-		return "{\r\n" + 
-				"		    \"place_id\":\""+placeId+"\" \r\n" + 
-				"		}";
-
+	public static HashMap<String, Object> deletePayload(String placeId) {
+		HashMap<String, Object> deleteplacemap = new HashMap<String, Object>();
+		deleteplacemap.put("place_id", placeId);
+		return deleteplacemap;
 	}
 }

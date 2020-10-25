@@ -3,6 +3,7 @@ package base;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.util.HashMap;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -21,7 +22,7 @@ public class BaseBuilder {
 	PrintStream log;
 		
 	public Response postAddPlace() throws FileNotFoundException {
-		String addPlacePayload = Payload.addPlacePayload();
+		HashMap<String, Object> addPlacePayload = Payload.addPlacePayload();
 		builder = new RequestSpecBuilder();
 		builder.setBaseUri(pro.getPropValue("rahulShettyBaseURI"));
 		builder.addQueryParam("key", "qaclick123");
@@ -36,7 +37,7 @@ public class BaseBuilder {
 	}
 	
 	public Response postDeletePlace(String placeId) throws FileNotFoundException {
-		String deletePayload = Payload.deletePayload(placeId);
+		HashMap<String, Object> deletePayload = Payload.deletePayload(placeId);
 		builder = new RequestSpecBuilder();
 		builder.setBaseUri(pro.getPropValue("rahulShettyBaseURI"));
 		builder.addQueryParam("key", "qaclick123");
