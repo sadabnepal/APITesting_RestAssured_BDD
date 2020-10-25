@@ -15,3 +15,5 @@ API Automation Test is RestAssured based BDD framework to perform API testing. T
 
 ### Reports used
 - `Cucumber Report`
+
+## Sample Report
