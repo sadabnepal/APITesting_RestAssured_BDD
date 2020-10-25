@@ -1,4 +1,4 @@
-package utilities;
+package resources;
 
 import java.util.ArrayList;
 import java.util.HashMap;
