@@ -1,16 +1,18 @@
 package base;
 
+import java.io.FileNotFoundException;
+
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import utilities.Utilities;
 
-public class CrudOperation {
+public class CrudOperation extends BaseBuilder {
 	static Response response;
 	
-	public Response performPOSTcall(String apiName) {
+	public Response performPOSTcall(String apiName) throws FileNotFoundException {
 		
 		if(apiName.equalsIgnoreCase("addPlaceAPI")) {
-			response = new BaseBuilder().postAddPlace();
+			response = postAddPlace();
 		}
 		else if(apiName.equalsIgnoreCase("deletePlaceAPI")) {
 			if(response == null) {
@@ -18,7 +20,7 @@ public class CrudOperation {
 			}
 			JsonPath js = Utilities.rawToJson(response);
 			String placeId = js.get("place_id").toString();
-			response = new BaseBuilder().postDeletePlace(placeId);
+			response = postDeletePlace(placeId);
 		}
 		return response;
 	}

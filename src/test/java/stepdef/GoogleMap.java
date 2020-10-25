@@ -1,5 +1,7 @@
 package stepdef;
 
+import java.io.FileNotFoundException;
+
 import org.junit.Assert;
 
 import base.CrudOperation;
@@ -16,7 +18,7 @@ public class GoogleMap {
 	public static String placeID;
 
 	@Given("User calls {string} with {string} http request")
-	public void user_calls_request_with_http_request(String apiName, String requestType) {
+	public void user_calls_request_with_http_request(String apiName, String requestType) throws FileNotFoundException {
 		if(requestType.equalsIgnoreCase("POST")) {
 			response = new CrudOperation().performPOSTcall(apiName);
 		} else if(requestType.equalsIgnoreCase("GET")) {
