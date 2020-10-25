@@ -20,7 +20,7 @@ public class GoogleMap {
 		if(requestType.equalsIgnoreCase("POST")) {
 			response = new CrudOperation().performPOSTcall(apiName);
 		} else if(requestType.equalsIgnoreCase("GET")) {
-			response = new CrudOperation().performGETcall(apiName);
+//			response = new CrudOperation().performGETcall(apiName);
 		}
 	}
 	

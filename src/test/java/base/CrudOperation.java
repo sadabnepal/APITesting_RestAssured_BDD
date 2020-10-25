@@ -7,19 +7,6 @@ import utilities.Utilities;
 public class CrudOperation {
 	static Response response;
 	
-	public Response performGETcall(String apiName) {
-		
-		if(apiName.equalsIgnoreCase("getWeatherAPI")) { 
-			response = new BaseBuilder().getCitySpec(); 
-		} 
-		else if(apiName.equalsIgnoreCase("getHttpBin")) { 
-			response = new BaseBuilder().gethttpbin(); 
-		}
-		
-		response = response.then().statusCode(200).extract().response();
-		return response;
-	}
-	
 	public Response performPOSTcall(String apiName) {
 		
 		if(apiName.equalsIgnoreCase("addPlaceAPI")) {

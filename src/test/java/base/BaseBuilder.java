@@ -12,29 +12,7 @@ public class BaseBuilder {
 	RequestSpecBuilder builder;
 	RequestSpecification reqspec;
 	Response response;
-	
-	public Response getCitySpec() {
-		String apiKey = pro.getPropValue("openWeatherAPIKey");
-		String cityName = "India";
 		
-		builder = new RequestSpecBuilder();
-		builder.setBaseUri(pro.getPropValue("openWeatherBaseURI"));
-		builder.addQueryParam("q", cityName);
-		builder.addQueryParam("appid", apiKey);
-		reqspec = builder.build();
-		reqspec = RestAssured.given().spec(reqspec);
-		return response =  reqspec.get("/data/2.5/weather");
-	}
-	
-	public Response gethttpbin() {
-		builder = new RequestSpecBuilder();
-		builder.setBaseUri(pro.getPropValue("httpbinBaseURI"));
-		builder.setAccept("application/json");
-		reqspec = builder.build();
-		reqspec = RestAssured.given().spec(reqspec);
-		return response =  reqspec.get("/get");	
-	}
-	
 	public Response postAddPlace() {
 		String addPlacePayload = Payload.addPlacePayload();
 		builder = new RequestSpecBuilder();
