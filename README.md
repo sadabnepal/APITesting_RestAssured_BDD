@@ -8,16 +8,24 @@ API Automation Test is RestAssured based BDD framework to perform API testing. T
 ```
 
 ## Run project and Generate Report
+**In terminal from root project folder (APITesting_RestAssured_BDD), run below commands as required **
 ```
-** In terminal from root project folder (APITesting_RestAssured_BDD), run below commands as required **
-1. To run all features `**mvn clean test verify**`
-2. To pass environment variable from command line `**mvn clean test verify -DargLine=-DWSNSHELL_HOME=RSURI**`
-   **RSRUI** is environment passed in `src-> test-> java-> base-> BaseBuilder.java` and defined in `**config.properties**`
-3. To view HTML report open file in any browse. Restule file path: "{project_root_folder_paths}/APIAutomationFramework/target/cucumber-html-reports/overview-features.html"
+- To run all features `mvn clean test verify`
+- To pass environment variable from command line `mvn clean test verify -DargLine=-DWSNSHELL_HOME=RSURI`
+   `RSRUI` is environment passed in `src-> test-> java-> base-> BaseBuilder.java` and defined in `config.properties`
+- To view HTML report open file in any browse. Restule file path: `{project_root_folder_paths}/APIAutomationFramework/target/cucumber-html-reports/overview-features.html`
 ```
 
 ### Reports used
 - `Cucumber Report`
+
+### Key Features
+	- [x] Runtime environment set
+	- [x] Hashmap to simplify serialization of payload
+	- [x] Tag based execution
+	- [x] Detailed Cucumber Report
+	- [x] Header builder simplified
+	- [x] Reusable methods to perform GET, POST operations
 
 ## Sample Report
 ![image](https://user-images.githubusercontent.com/65847528/97099111-258abc80-16ab-11eb-813d-267afa9e4535.png)
