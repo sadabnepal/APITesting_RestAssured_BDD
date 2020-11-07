@@ -97,6 +97,9 @@
 							<mergeFeaturesWithRetest>false</mergeFeaturesWithRetest>
 							<!-- optional, set true to fail build on test failures -->
 							<checkBuildResult>false</checkBuildResult>
+							<systemPropertyVariables>
+								<WSNSHELL_HOME>conf</WSNSHELL_HOME>
+							</systemPropertyVariables>
 						</configuration>
 					</execution>
 				</executions>

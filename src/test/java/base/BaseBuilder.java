@@ -20,7 +20,19 @@ public class BaseBuilder {
 	
 	public RequestSpecification placeSpecBuilder() throws FileNotFoundException {
 		builder = new RequestSpecBuilder();
-		builder.setBaseUri(pro.getPropValue("rahulShettyBaseURI"));
+		
+		//Read environment variable key from command line and search in config.properties to find the match and set it
+		String env = System.getProperty("WSNSHELL_HOME");
+		if(env.equals("google")) { 
+			builder.setBaseUri(pro.getPropValue("google")); 
+		} 
+		else if(env.equalsIgnoreCase("RSURI")) { 
+			builder.setBaseUri(pro.getPropValue("rahulShettyBaseURI")); 
+		}
+		else { 
+			builder.setBaseUri(pro.getPropValue("no")); 
+		}
+		
 		builder.addQueryParam("key", "qaclick123");
 		builder.setContentType("application/json");
 		log = new PrintStream(new FileOutputStream("log.txt"));
