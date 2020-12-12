@@ -23,6 +23,12 @@ public class BaseBuilder {
 		
 		//Read environment variable key from command line and search in config.properties to find the match and set it
 		String env = System.getProperty("WSNSHELL_HOME");
+		
+		if(env == null) {
+			System.out.println("No Environment found!!!!!!!!, setting default environment to ==> "+pro.getPropValue("rahulShettyBaseURI"));
+			env = pro.getPropValue("rahulShettyBaseURI");
+		}
+		
 		if(env.equals("google")) { 
 			builder.setBaseUri(pro.getPropValue("google")); 
 		} 
@@ -30,9 +36,9 @@ public class BaseBuilder {
 			builder.setBaseUri(pro.getPropValue("rahulShettyBaseURI")); 
 		}
 		else { 
-			builder.setBaseUri(pro.getPropValue("no")); 
+			builder.setBaseUri(pro.getPropValue("rahulShettyBaseURI")); 
 		}
-		
+		System.out.println("Building Headers....");
 		builder.addQueryParam("key", "qaclick123");
 		builder.setContentType("application/json");
 		log = new PrintStream(new FileOutputStream("log.txt"));

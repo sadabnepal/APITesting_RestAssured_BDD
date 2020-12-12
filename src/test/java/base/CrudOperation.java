@@ -19,6 +19,7 @@ public class CrudOperation  {
 		
 		if(apiName.equalsIgnoreCase("AddPlaceAPI")) 
 		{
+			System.out.println("Sending POST request to: "+resourceAPI.getResource()+" service");
 			reqspec = RestAssured.given().spec(reqspec).body(Payload.addPlacePayload());
 		}
 		else if(apiName.equalsIgnoreCase("DeletePlaceAPI")) 
@@ -28,6 +29,7 @@ public class CrudOperation  {
 				gm.user_calls_request_with_http_request("AddPlaceAPI", "POST");
 				gm.i_retrieve_the_place_id();
 			}
+			System.out.println("Sending POST request to: "+resourceAPI.getResource()+" service");
 			reqspec = RestAssured.given().spec(reqspec).body(Payload.deletePayload(GoogleMap.placeID));
 		}
 		response = reqspec.post(resourceAPI.getResource()).then().extract().response();
