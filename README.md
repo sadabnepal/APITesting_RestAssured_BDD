@@ -12,10 +12,14 @@ API Automation Test is RestAssured based BDD framework to perform API testing. T
 - To run all features `mvn clean test verify`
 - To pass environment variable from command line `mvn clean test verify -DargLine=-DWSNSHELL_HOME=RSURI`
   *RSRUI* is environment passed in `src-> test-> java-> base-> BaseBuilder.java` and defined in *config.properties*
-- To view HTML report open file in any browse. Restule file path: `{project_root_folder_paths}/APIAutomationFramework/target/cucumber-html-reports/overview-features.html`
+- To view Cucumber HTML Report open file in any browse. Restule file path: `{project_root_folder_paths}/APIAutomationFramework/target/cucumber-html-reports/overview-features.html`
+- To view Spark Report open file in any browse. Restule file path: `{project_root_folder_paths}/APIAutomationFramework/test-output/Pdf/ExtentPdf.pdf`
+- To view Cucumber PDF Report open file in any browse. Restule file path: `{project_root_folder_paths}/APIAutomationFramework/test-output/Spark/ExtentSpark.html`
 
 ### Reports used
-- `Cucumber Report`
+- `Spark HTML Report`
+- `Cucumber PDF Report`
+- `Cucumber HTML Report`
 
 ### Key Features
 	- Runtime environment set
@@ -26,4 +30,4 @@ API Automation Test is RestAssured based BDD framework to perform API testing. T
 	- Reusable methods to perform GET, POST operations
 
 ## Sample Report
-![image](https://user-images.githubusercontent.com/65847528/97099111-258abc80-16ab-11eb-813d-267afa9e4535.png)
+![Report](https://user-images.githubusercontent.com/65847528/102914715-b95be780-44a6-11eb-8022-79b9149c5fad.gif)

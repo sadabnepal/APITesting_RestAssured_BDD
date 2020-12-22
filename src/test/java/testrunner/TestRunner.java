@@ -12,7 +12,9 @@ import io.cucumber.junit.CucumberOptions;
 		dryRun = false,
 		monochrome = true,
 //		tags = "@AddPlace",
-		plugin = "json:target/jsonReports/cucumber-report.json"
+		plugin = {"json:target/jsonReports/cucumber-report.json",
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+		publish = true
 )
 public class TestRunner {
 
