@@ -3,8 +3,8 @@ API Automation Test is RestAssured based BDD framework to perform API testing. T
 
 ## Getting Started
 ```
-1. git clone https://github.com/sadabnepal/APITesting_RestAssured_BDD.git"
-2. Navigate to APITesting_RestAssured_BDD
+1. git clone https://github.com/sadabnepal/RestasssuredBDDFramework.git"
+2. Navigate to RestasssuredBDDFramework
 ```
 
 ## Run project and Generate Report
