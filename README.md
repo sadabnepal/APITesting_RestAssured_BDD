@@ -1,14 +1,14 @@
 # API Automation Test BDD framework
-API Automation Test is RestAssured based BDD framework to perform API testing. This project is useful as an example of API Testing with RestAssured and Java playing nicely together.
+API Automation Test is RestAssured based Cucumber framework to perform API testing. This project is useful as an example of API Testing with RestAssured and Java playing nicely together.
 
 ## Getting Started
 ```
-1. git clone https://github.com/sadabnepal/RestasssuredBDDFramework.git"
-2. Navigate to RestasssuredBDDFramework
+1. git clone https://github.com/sadabnepal/RestasssuredCucumber.git"
+2. Navigate to RestasssuredCucumber
 ```
 
 ## Run project and Generate Report
-**In terminal from root project folder (APITesting_RestAssured_BDD), run below commands as required**
+**In terminal from root project folder (RestasssuredCucumber), run below commands as required**
 - To run all features `mvn clean test verify`
 - To pass environment variable from command line `mvn clean test verify -DargLine=-DWSNSHELL_HOME=RSURI`
   *RSRUI* is environment passed in `src-> test-> java-> base-> BaseBuilder.java` and defined in *config.properties*
